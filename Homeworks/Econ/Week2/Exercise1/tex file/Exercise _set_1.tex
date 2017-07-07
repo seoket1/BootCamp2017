@@ -1,0 +1,97 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{geometry}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in}
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{\footnotesize\textsl{OSM Lab, Summer 2017, Econ PS \#1}}
+\cfoot{}
+\rfoot{\footnotesize\textsl{Page \thepage\ of \pageref{LastPage}}}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\usepackage[format=hang,font=normalsize,labelfont=bf]{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{float,color}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor=red,urlcolor=blue,citecolor=red}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{derivation}{Derivation} % Number derivations on their own
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition} % Number propositions on their own
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+%\numberwithin{equation}{section}
+\bibliographystyle{aer}
+\newcommand\ve{\varepsilon}
+\newcommand\boldline{\arrayrulewidth{1pt}\hline}
+
+\usepackage{ amssymb }
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+
+
+
+
+\begin{document}
+
+\begin{flushleft}
+   \textbf{\large{Excercise Set1 for Economics}} \\[5pt]
+   OSM Lab, Eun-Seok Lee \\[5pt]
+ 
+\end{flushleft}
+
+\vspace{5mm}
+
+\begin{enumerate}
+
+       
+	\item  (Please see py file) After computing both successive approximation and matrix algebra, the results were very similar. I set tolerance rate as "1e-7" but if I take
+		 higher tolerance rate, it would become more similar. The successive approximation result is $[-0.89552246, 13.34328364, 45.64179143]^{T}$
+		and matrix algebra result is $[-0.89552239, 13.34328358, 45.64179104]^{T}$.
+
+	\item Claim: by Banah's fixed point theorem, it has an unique solution.\\
+		 Metric Space is complete, so all I have to do is to prove T is a contraction mapping.\\
+		$\rho(Tx,Ty) = |\beta \sum max(w_{k}, x)p_{k} - \beta \sum max(w_{k}, y)p_{k}| $ \\
+				  $\leq \beta \sum |max(w_{k}, x)|p_{k} - \beta \sum |max(w_{k}, y)|p_{k}$ \\
+				  $\leq \beta |x-y|$ \\
+				  $= \beta\rho(x,y)$ \\ \\
+                                  $\therefore \rho(Tx,Ty) \leq \beta\rho(x,y)$ \\ \\
+		If this problem satisfies fixed point property, I can use successive approximation. In the next problem, I used it, and got a solution for reservation wage.
+
+   		
+   	\item (Please see py file) The reservation wage increases, and this coincides with my intuition; as compensation increases, the incentive for work may decrease.
+
+\end{enumerate}
+
+\vspace{25mm}
+
+
+
+\end{document}

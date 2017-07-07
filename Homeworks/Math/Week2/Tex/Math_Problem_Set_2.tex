@@ -1,0 +1,619 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{geometry}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in}
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{\footnotesize\textsl{OSM Lab, Summer 2017, Math PS \#2}}
+\cfoot{}
+\rfoot{\footnotesize\textsl{Page \thepage\ of \pageref{LastPage}}}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\usepackage[format=hang,font=normalsize,labelfont=bf]{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{float,color}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor=red,urlcolor=blue,citecolor=red}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{derivation}{Derivation} % Number derivations on their own
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition} % Number propositions on their own
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+%\numberwithin{equation}{section}
+\bibliographystyle{aer}
+\newcommand\ve{\varepsilon}
+\newcommand\boldline{\arrayrulewidth{1pt}\hline}
+
+\begin{document}
+
+\begin{flushleft}
+   \textbf{\large{Math Homework Week \#2, Inner Product Space}} \\[5pt]
+   OSM Lab, Eun-Seok Lee \\[5pt]
+
+\end{flushleft}
+
+\vspace{5mm}
+
+\begin{enumerate}
+
+	\item (1, 3.1) \\	
+(i)
+$\frac{1}{4} (\Vert x + y \Vert ^2 - \Vert x - y \Vert ^2) $
+\\
+\\
+$= \frac{1}{4} (\Vert x \Vert ^2 + <x,y> + <y,x> + \Vert y \Vert ^2 - \Vert x \Vert ^2 + <x,y> + <y,x> - \Vert y \Vert ^2) $
+\\
+\\
+$=\frac{1}{4}(4 \cdot <x,y>)$
+\\
+\\
+$ = <x,y>$
+\\
+\\
+(ii)
+$\frac{1}{2}(\Vert x + y \Vert ^2 + \Vert x - y \Vert ^2) $
+\\
+\\
+$= \frac{1}{2} (\Vert x \Vert ^2 + <x,y> + <y,x> + \Vert y \Vert ^2 + \Vert x \Vert ^2 - <x,y> - <y,x> + \Vert y \Vert ^2) $
+\\
+\\
+$=\frac{1}{2}(2 \Vert x \Vert ^2 + 2 \Vert y \Vert ^2) $
+\\
+\\
+$=\Vert x \Vert ^2 + \Vert y \Vert ^2$
+
+
+
+
+
+	\item (2, 3.2) \\
+$=\frac{1}{4}(4[Re<x,y>] + 4i [Im <x,y>]) $
+\\
+\\
+$=<x,y>$
+\\
+\\
+Because, $i \Vert x + iy \Vert ^2 - i \Vert x - iy \Vert ^2 = -2(-<x,y> + \overline{<x,y>}) = 4i [IM<x,y>] $
+
+
+
+
+	\item (3, 3.3) \\
+$<f,g> = \int_{0}^{1} f(x)g(x) dx$
+\\
+\\
+(i) $cos \theta = \frac{\int_{0}^{1} x \cdot x^5 dx }{\sqrt{\int_{0}^{1} x^2 dx}\sqrt{\int_{0}^{1} x^{10} dx}} $ 
+\\
+\\
+\\
+$= \frac{[\frac{1}{7}x^7]_0^1}{\sqrt{[\frac{1}{3}x^3]_0^1 [\frac{1}{11} x^{11} ]_0^1}} = \frac{\sqrt{33}}{7}$
+\\
+\\
+(ii) $cos \theta = \frac{\int_{0}^{1} x^2 \cdot x^4 dx }{\sqrt{\int_{0}^{1} x^4 dx}\sqrt{\int_{0}^{1} x^{8} dx}} $ 
+\\
+\\
+$= \frac{\frac{1}{7}}{\sqrt{\frac{1}{5} \frac{1}{9}}} = \frac{\sqrt{45}}{7} $
+
+
+
+
+	\item (4, 3.8) \\
+(i)
+\\
+(1)
+$\frac{1}{\pi}\int_{-\pi}^{\pi} cost \cdot sint \ dt $ = $\frac{1}{\pi}\int_{-\pi}^{\pi} \frac{1}{2} sin2t \ dt $ 
+\\
+\\
+$=\frac{1}{2\pi}[-\frac{1}{2} cos2t]_{-\pi}^{pi}$
+\\
+$=0$
+\\
+\\
+(2)
+$\frac{1}{\pi}\int_{-\pi}^{\pi} cost \cdot cos2t \ dt $ = $\frac{1}{\pi}\int_{-\pi}^{\pi} cost (2cos^2t-1) \ dt $
+\\
+\\
+$=\frac{1}{\pi}\int_{-\pi}^{\pi} (2cos^3t-cost) \ dt $
+\\
+\\
+$=\frac{1}{\pi}\int_{-\pi}^{\pi} \frac{1}{2}(cos3t+cost) \ dt $
+\\
+\\
+$=\frac{1}{\pi}[\frac{1}{6}(sin3t)+\frac{1}{2}sint]_{-\pi}^{\pi} $
+\\
+\\
+$=0$
+\\
+\\
+(3)
+$\frac{1}{\pi}\int_{-\pi}^{\pi} cost \cdot sin2t \ dt $ 
+$=\frac{1}{\pi}\int_{-\pi}^{\pi} 2cos^2t \cdot sint \ dt $ 
+\\
+\\
+$=\frac{1}{\pi}\int_{-\pi}^{\pi} 2(sint - sin^3t) \ dt $ 
+\\
+\\
+$=\frac{1}{\pi}[\frac{1}{2}(-cost)+\frac{1}{6}(-cos3t)]_{-\pi}^{\pi} $ 
+$=0$
+\\
+\\
+(4)
+$\int_{-\pi}^{\pi} sint \cdot cos2t \ dt $ 
+$=\int_{-\pi}^{\pi} sint(1-2sin^2t) \ dt $ 
+\\
+\\
+$=\int_{-\pi}^{\pi} -\frac{1}{2}sint + \frac{3}{2}sin3t \ dt $ 
+\\
+\\
+$=[\frac{1}{2}cost - \frac{1}{2}cost3t]_{-\pi}^{\pi} $
+\\
+\\
+$=0$
+\\
+\\
+(5)
+$\int_{-\pi}^{\pi} sint \cdot sin2t \ dt $ 
+$=\int_{-\pi}^{\pi} 2sin^2t cost \ dt $ 
+$=\int_{-\pi}^{\pi} 2(1-cos^2t)cost \ dt $ 
+\\
+\\
+$=\int_{-\pi}^{\pi} 2cost - 2 \cdot \frac{1}{4}(3cost + cos3t) \ dt $ 
+$=\int_{-\pi}^{\pi} \frac{1}{2}cost - \frac{1}{2}cos3t \ dt $ 
+\\
+\\
+$=[\frac{1}{2}sint-\frac{1}{6}sin3t]_{-\pi}^{\pi}$
+\\
+\\
+$=0$
+\\
+\\
+(6)
+$\int_{-\pi}^{\pi} cos2t \cdot sin2t \ dt $
+\\
+\\
+$\int_{-2\pi}^{2\pi} cost \cdot sint (\frac{1}{2}) \ dt $
+$=0$
+\\
+\\
+Thus, S is orthogonal set.
+
+
+
+
+For measure, $\frac{1}{\pi}\int_{-\pi}^{\pi} cos^2 tdt = 1 \\
+\frac{1}{\pi}\int_{-\pi}^{\pi} sin^2 tdt = 1 \\
+\frac{1}{\pi}\int_{-\pi}^{\pi} cos^2 2tdt = 1 \\
+\frac{1}{\pi}\int_{-\pi}^{\pi} sin^2 2tdt = 1$ \\
+
+Thus, it is orthonormal. \\
+
+(ii) compute $||t||$\\
+	$<t, t> = \frac{1}{\pi}\int_{-\pi}^{\pi} t^2 dt = \frac{2}{3}\pi^2 $ \\
+
+(iii) $\sum_{i=1}^{m}<x_{i}, cos(3t)>x_{i} = 0$ \\
+
+(iv) $\sum_{i=1}^{m}<x_{i}, t>x_{i} = 2\pi(sint) - \pi(sin(2t))$ \\
+
+
+
+
+
+
+	\item (5, 3.9) $
+		\begin{bmatrix}cos\theta & -sin\theta \\
+			sin\theta & cos\theta 
+			\end{bmatrix} \begin{bmatrix}
+			x_{1}\\
+			x_{2}
+			\end{bmatrix} = \begin{bmatrix}
+			x_{1}cos\theta  -x_{2}sin\theta \\
+			x_{1}sin\theta  +x_{2}cos\theta 
+			\end{bmatrix}$
+
+			$
+		\begin{bmatrix}cos\theta & -sin\theta \\
+			sin\theta & cos\theta 
+			\end{bmatrix} \begin{bmatrix}
+			y_{1}\\
+			y_{2}
+			\end{bmatrix} = \begin{bmatrix}
+			y_{1}cos\theta  -y_{2}sin\theta \\
+			y_{1}sin\theta  +y_{2}cos\theta 
+			\end{bmatrix}$ \\
+
+		$(x_{1}cos\theta - x_{2}sin\theta)(y_{1}cos\theta - y_{2}sin\theta)  + (x_{1}sin\theta + x_{2}cos\theta)(y_{1}sin\theta + y_{2}cos\theta) = x_{1}y_{1} + x_{2}y_{2}$
+
+
+
+
+	\item (6, 3.10)\\ 
+		(i) $ Q^{H}Q = \begin{bmatrix}q_{1}^{H} \\ \vdots \\ q_{n}^{H}\end{bmatrix}
+					\begin{bmatrix}q_{1} & \hdots & q_{n}\end{bmatrix} = 
+\begin{bmatrix}
+1 & \cdots & 0 \\
+\vdots & \ddots & \vdots \\
+0 & \cdots & 1
+\end{bmatrix}
+		$
+		
+		(ii) $\| Qx\| = (Qx)^{H}Qx = x^{H}Q^{H}Qx = x^{H}x = || x || $ \\
+	        (iii) $Q^{-1}QQ^{H} = Q^{-1}$  \\ $Q^{H}=Q^{-1}$ \\
+		(iv) $QQ^{H} = I$ has a proof already above. \\
+		(v) $det(Q^{H}Q) = det(I) \\$ $det(Q^{H})det(Q) = I \\$ $(detQ)^2=1$ \\ $\therefore \left|det(Q)\right| = 1  $ \\ \\
+		Converse is not true. Counter example is $\begin{bmatrix}
+			2 & 1 \\
+			1 & 1
+			\end{bmatrix}$ \\
+		(vi) $(Q_{1}Q_{2})(Q_{1}Q_{2})^{H} = Q_{1}Q_{2}Q_{2}^{H}Q_{1}^{H} = QQ_{1}^{H} = I $\\
+		$ (Q_{1}Q_{2})^{H}(Q_{1}Q_{2}) = I$ \\
+		$\therefore Q_{1}Q_{2}$ is also orthonormal.
+		
+
+	\item (7, 3.11) \\
+Assume $(x_1 \cdots x_{n-1})$ are linearly independent.
+\\
+Then, $x_n$ = span $(x_1, x_2 \cdots x_{n-1})$
+\\
+If $(e_1, \cdots e_{n-1})$ are orthonormal basis,
+after doing  G-S process, then, \\
+$x_n = <x_n, e_1>e_1 + <x_n, e_2>e_2 + \cdots + <x_n,e_{n-1}>e_{n-1}  $
+\\
+Now, in the G-S process, for finding $e_n$
+\\
+\\
+$e_n = \frac{x_n - p_n}{\Vert x_n - p_n \Vert} $, then , $x_n - p_n = 0$
+So we will calculate $\frac{0}{\Vert 0 \Vert}$
+
+
+
+	\item (8, 3.16) From $ A=QR$,\\ (i) If A is singular, some diagonal entries of R can be zero. In this case, 			we can have multiple Q. \\ \\
+			(ii) $A=Q_{1}R_{1}=Q_{2}R_{2}.$ \\
+			$K = R_{1}R_{2}^{-1} = Q_{1}^{H}Q_{2}$ and $(R_{1}^{-1})^{H}R_{2}^{H} = R_{1}R_{2}^{-1}$\\
+			 diagonals of $K$ are positive and 1. Also, it has to be lower triangular and upper triangular matrix.\\
+			$\therefore, R_{1}=R_{2}, Q_{1} = Q_{2}$
+
+
+	\item (9, 3.17) \\
+		$A^{H}Ax=A^{H}b \\$
+		$(\hat{Q} \hat{R})^H(\hat{Q}\hat{R})x=(\hat{Q}\hat{R})^Hb$ \\
+		$\hat{R}^HRx=\hat{Q}\hat{R}^Hb$ \\
+		$\hat{Q}^Hx=\hat{R}^Hb$
+
+
+	\item (10, 3.23) \\
+$\Vert y \Vert = \Vert x + y - x \Vert \leq \Vert x \Vert + \Vert y-x \Vert $
+\\
+\\
+Thus, $\Vert y \Vert - \Vert x \Vert \leq \Vert y-x \Vert $
+\\
+\\
+$\Vert x \Vert = \Vert y + x -y \Vert \leq \Vert y \Vert + \Vert x-y \Vert $
+\\
+\\
+Thus, $\Vert x \Vert - \Vert y \Vert \leq \Vert x-y \Vert $
+\\
+\\
+Therefore, $\vert \Vert x \Vert - \Vert y \Vert \vert \leq \Vert x-y \Vert$
+
+
+
+	\item (11, 3.24) \\
+(i)
+\\
+\\
+(1) $\int_{a}^{b} \vert 0 \vert dt = 0$ and $\int_{a}^{b} \vert f(t) \vert dt \geq 0$
+\\
+\\
+(2) $\int_{a}^{b} \vert af(t) \vert dt$ = $a\int_{a}^{b} \vert f(t) \vert dt$
+\\
+\\
+(3) $\int_{a}^{b} \vert f(t) \vert dt$ + $\int_{a}^{b} \vert g(t) \vert dt$  = $\int_{a}^{b} \vert f(t) \vert + \vert g(t) \vert dt$ $\geq$ $ \int_{a}^{b} \vert f(t) + g(t) \vert dt$
+\\
+\\
+(ii)
+\\
+\\
+(1) $(\int_{a}^{b} \vert 0 \vert ^2 dt)^{0.5} = 0$ and $(\int_{a}^{b} \vert f(t) \vert ^2 dt)^{0.5} \geq 0 $
+\\
+\\
+(2) $(\int_{a}^{b} \vert af(t) \vert^2 dt)^{0.5} = a(\int_{a}^{b} \vert f(t) \vert^2 dt)^{0.5}$
+\\
+\\
+(3) $(\int_{a}^{b} \vert f(t) \vert ^2 dt)^{0.5}$ + $(\int_{a}^{b} \vert g(t) \vert ^2 dt)^{0.5}$ $\geq$ $ (\int_{a}^{b} \vert f(t) + g(t) \vert ^2 dt)^{0.5}$
+\\
+\\
+(iii)
+\\
+\\
+(1) $sup \vert 0 \vert = 0$ and $sup \vert f(x) \vert \geq 0$
+\\
+\\
+(2) $sup \vert af(x) \vert = a \cdot sup \vert f(x) \vert$
+\\
+\\
+(3) $sup \vert f(x) \vert + sup \vert f(y) \vert \geq sup \vert f(x) + f(y) \vert $
+\\
+\\
+$\because \vert f(x) \vert + \vert f(y) \vert \geq \vert f(x) + f(y) \vert $
+
+
+
+
+
+	\item (12, 3.26) \\ For equivalence relation,\\
+			1) $a\sim a$\\
+			2) $a\sim b$ iff  $b\sim a$\\
+			3) if $a\sim b$ and $b\sim c$, then $a\sim c$ \\ \\
+
+			1) There is $0<m<M$ s.t $m||X||a \leq ||X||a \leq M||X||a$ \\
+			2) There is $0<m<M$ s.t $m||X||a \leq ||X||b \leq M||X||a$ \\
+			There is $0<\frac{1}{M}<\frac{1}{m}$ s.t $\frac{1}{M}||X||b \leq ||X||a \leq \frac{1}{m}||X||b$ \\
+			3) There is There is $0<m<M$ s.t $m||X||a \leq ||X||b \leq M||X||a$ \\
+			There is $0<m^*<M^*$ s.t $m^*||X||b \leq ||X||c \leq M^*||X||b$ \\
+			Then, there is $0<\frac{m}{m^*}<MM^* $ s.t $\frac{m}{m^*}||X||a \leq ||X||c \leq MM^*||X||a$ \\
+
+	(i) 1) $\| X \|_{2} \leq  \|X \|_{1}$ \\
+		$ (|x_{1}|^2 +\cdots +|x_{n}|^2)< (|x_{1}| + \cdots + |x_{n}|)^2  \because $   interaction terms\\
+	     2) $\| X \|_{1} \leq \sqrt{n}\| X \|_{2} \\
+		\| X \|_{1} = \sum_{i=1}^{n}x_{i}1 \leq (\sum_{i=1}^{n}(x_{i})^2)^{0.5}(\sum_{i=1}^{n}1)^{0.5} \leq \sqrt{n}\| X\|_{2}$ by C-S ineqaulity. \\
+
+	(ii)$ \| X\|_{\infty} = sup(|x_{1}|, .... , |x_{n}|) $ \\
+		1) $\| X\|_{\infty} \leq \| X\|_{1}$ This is trivial. \\
+		 2) $\| X\|_{2} \leq \sqrt{n} \cdot sup(|x_{1}|, .... , |x_{n}|) \\
+		(|x_{1}|^2 + \cdots +|x_{n}|^2)^{0.5} \leq |x_{1}| +\cdots+ |x_{n}| \\
+		|x_{1}|^2 +\cdots + |x_{n}|^2 \leq (|x_{1}| + \cdots + |x_{n}|)^2 \leq n[sup(|x_{1}|, \cdots, |x_{n}|)]^2$
+
+
+
+	\item (13, 3.28) \\(i)\\
+	 1) $\frac{1}{\sqrt{n}} \| A \|_{2} \leq \| A \|_{1} \\
+		\frac{1}{\sqrt{n}} \| A \|_{2} = sup \frac{\| AX \|_{2}}{\sqrt{n}\| X \|_{2} } \leq sup \frac{\| AX \|_{1}}{\| X \|_{1}} $ \\
+	$\sqrt{n}\| X \|_{2} \geq \| X \|_{1} $ by 3.26 (i) \\
+	$\| AX \|_{2} \leq \| AX \|_{1} $ by 3.26 (i) \\ 
+
+	2)  $\| A \|_{1} \leq \sqrt{n} \| A \|_{2}$ \\
+		$sup \frac{\| AX \|_{1}}{\| X \|_{1}} \leq \sqrt{n} sup \frac{\| AX \|_{2}}{\| X \|_{2}} $ \\
+	$\| X \|_{1} \geq \| X \|_{2} $ by 3.26 (i) \\
+	$\sqrt{n}\| AX \|_{2} \geq \| AX \|_{1} $ by 3.26 (i) \\ \\
+
+	(ii)  $\frac{1}{\sqrt{n}} \| A \|_{\infty} \leq \| A \|_{2} $\\
+$sup \frac{\| AX \|_{\infty}}{\sqrt{n}\| X \|_{\infty} }  \leq sup \frac{\| AX \|_{2}}{\| X \|_{2} }$\\
+$	\| A \|_{2} \leq \sqrt{n} \| A \|_{\infty} $ \\
+	$sup \frac{\| AX \|_{2}}{\| X \|_{2} }  \leq sup \frac{\sqrt{n}\| AX \|_{\infty}}{\| X \|_{\infty} }$\\
+	Now, same logic above applies.
+
+
+
+
+
+	\item (14, 3.29) \\
+		$\rightarrow$ By the property $||Qx||=||x||$, $||Q|| = \frac{||Qx||}{||x||}=\frac{||x||}{|x||} = 1 $.\\
+	       $\rightarrow$ $||R_{x}|| = sup \frac{\| RxA \|_{2}}{\| A \|_{2}} $ \\
+	$ =  sup \frac{\| Ax \|_{2}}{\| A \|_{2}}\\$
+	 $sup \frac{\| Ax \|_{2}}{ sup \frac{\| Ax \|_{2}}{\| x \|_{2}}} \leq  \| x \|_{2} $\\
+Now, combining hint given, $\| R_{x}\|_{2} \geq \| x\|_{2}$
+
+
+
+
+	\item (15, 3.30)  \\
+			1) $||SAS^{-1}|| \geq $ and    $A=0 \leftrightarrow ||SAS^{-1}|| = 0\\$
+			2) $||S(tA)S^{-1}|| = |t| \cdot ||SAS^{-1}|| $ \\
+	 		3) $||S(A+B)S^{-1}|| \leq ||SAS^{-1}|| + ||SBS^{-1}||$ \\
+			4) $||SABS^{-1}|| = ||SAS^{-1}SBS^{-1}|| \leq ||SAS^{-1}||\cdot ||SBS^{-1}||$\\
+
+
+
+	\item (16, 3.37) \\
+		$p = ax^2 +bx + c \\ p’(1) = 2a+b = L(p)\\ L(p) = <q, p> = \int_{0}^{1}(qp)dx = 2a+b$\\
+		After setting $q = dx^2 + ex + f$, Then, after integration, we got the identity eqation like the next one.\\
+		$(\frac{1}{5}d + \frac{1}{4}e + \frac{1}{3}f)a + (\frac{1}{4}d + \frac{1}{3}e + \frac{1}{2}f)b + (\frac{1}{3}d + \frac{1}{2}e + f)c = 2a+b$\\ \\
+
+$\therefore d=180, e=-168, f=24$
+
+
+		 
+	\item (17, 3.38) \\ $p = ax^2 + bx + c \\ D(p)(x)=2ax+b\\ \therefore \begin{bmatrix}
+			2&0&0\\0&1&0\\0&0&0\end{bmatrix} \begin{bmatrix}
+			a\\b\\c\end{bmatrix} = \begin{bmatrix}2a\\b\\0\end{bmatrix}$  \\ \\ \\
+			$adjoint = \begin{bmatrix}
+			2&0&0\\0&1&0\\0&0&0\end{bmatrix}^T$
+
+
+	\item (18, 3.39) \\
+(i) $<(S+T)^*x, y> = <x, (S+T)y>$
+\\
+\\
+$=<x,Sy> + <y,Ty>$
+$=<S^*,x> + <T^*x,y>$ = $<(S^*+T^*)x,y>$
+\\
+\\
+(ii)
+$<(S^*)^*x, y> = <x,S^*y> = <Sx,y>$
+\\
+\\
+(iii)
+$<(ST)^*x,y> = <x,STy>$
+$=<S^*x, Ty> = <T^*S^*x, y>$
+\\
+\\
+(iv)
+$(T^*)^{-1}T^*=1$ and $((T^*)^{-1}T^*)^*=1^*=1$
+\\
+Thus, $T^{**}((T^*)^{-1})^*=1$
+\\
+$T((T^*)^{-1})^*=1$
+\\
+$((T^*)^{-1})^*=T^{-1}$
+\\
+$(T^*)^{-1}=(T^{-1})^*$
+
+
+
+	\item (19, 3.40)  \\$<A,B> = tr(A^TB)$ \\
+				(i) $A^* = A^H \\ <AB,C> = <B,A^*C> \\ tr((AB)^HC)=tr(B^HA^*C) \\ tr(B^HA^HC) = tr(B^HA^*C) \\ \therefore A^H = A^*  $\\
+
+				(ii) $ <A_{2},A_{3}A_{1}> = <A_{2}A_{1}^{*}, A_{3}> \\
+					tr(A_{2}^{H}A_{3}A_{1}) = tr((A_{2}A_{1}^{*})^HA_{3})$ ?? \\
+					$\rightarrow tr(A_{1}^{H}A_{2}A_{3}^H) = tr((A_{2}A_{1}^{*})^HA_{3})$
+
+
+				(iii) $T_{A}(X) = AX -XA  \\
+					<X, T_{A^*}X> =tr[X^*(A^*X-XA^*)] \\
+					 =tr[X^*XA-AXX^*]\\
+					 =tr[X^*(XA-AX)]\\
+					 = tr[(XA-AX)^*X]\\
+					 = <T_{A}(X), X>\\
+					 = <X, (T_{A})^*(X)> \\$
+				$\therefore (T_{A})^*=T_{A^*}$
+
+
+
+
+	\item (20, 3.44) \\ If $Ax=b$ satifies, then, $0=0^T\hat{x}=(y^TA)x=y^TAx=y^Tb=<y, b> \neq 0 $
+
+
+
+	\item (21, 3.45) \\First, I want to establish general cases of symmetric and skew-symmetric matrix like below.\\ $ X=A+A^T$ and $ Y=B-B^T$ \\
+			$ tr[(A+A^T)^T(B-B^T)] = tr[AB+A^TB-AB^T-A^TB^T] = 0 $ by property of trace.\\
+			Then, it easily proves by this.
+
+
+
+	\item (22, 3.46) \\
+		(i) $Ax\in R(A) $\\ Also $x \in N(A^HA).$ \\ It means that $A^HAx=0$\\
+		$\therefore A^H(Ax)=0$\\
+		$Ax \in N(A^H)$ \\
+		(ii) $A^HAx=0 \rightarrow (A^H)^{-1}A^HAx=0 \rightarrow Ax=0$ \\
+		(iii) $N(A^HA) = N(A)$, so its dimenstion has to be same. \\
+		(iv) $Ax=0$. \\ If A has linear independent column, then $x = 0$.\\	
+			so, $A^HAx=0$ and $null(A^HA)$ is ${0}$. \\ $A^HA$ is nonsingular.
+
+
+
+	\item (23, 3.47) \\ $ P = A(A^HA)^{(-1)}A^H$ \\
+			(i) $P^2 = A(A^HA)^{(-1)}A^HA(A^HA)^{(-1)}A^H  =A(A^HA)^{(-1)}A^H = P$ \\
+			(ii) $P^H = (A(A^HA)^{(-1)}A^H )^H =A(A^HA)^{(-1)}A^H $ \\
+			(iii) $rank(P) = n \\ rank(P) \leq rank(A)$ and $PA=A$ so, $rank(A) \leq rank(P)$\\
+				$\therefore rank(P) = rank(A)$
+
+
+
+
+	\item (24, 3.48) \\ (i) $P(A+B) = \frac{(A+B)+(A+B)^T}{2}=P(A) + P(B) $\\
+					  $P(tA) = \frac{tA+(tA)^T}{2} = tP(A)$\\
+				(ii) $ \frac{  \frac{A+(A)^T}{2}+  \frac{A+(A)^T}{2}    }{2} =  P(A)$ \\
+				(iii) $P^*=P \\ <P(A),B> = <A, P^*(B)>$ \\
+					$<P(A),B> = < \frac{A+(A)^T}{2}, B> = tr[\frac{A+(A)^T}{2}B] = tr[\frac{A^T}{2}B + \frac{A}{2}B] -- first $ \\
+				$<A,P^*(B)> = <A, \frac{B+(B)^T}{2}> = tr[A\frac{B+(B)^T}{2}] = tr[\frac{AB}{2} + \frac{AB^T}{2}]  -- second\\$
+		first and second are same.\\
+				(iv) $N(P) = skew_{n}(R) ?$ \\ Let the matrix X be being playing as operator P. \\
+						$XA = 0 \rightarrow \frac{A+(A)^T}{2}=0 \rightarrow A=-A^T$ \\
+				(v) $R(P) = Sym_{n}(R) \\ XA = B \rightarrow \frac{A+(A)^T}{2} = B \\ B=B^T$\\
+				(vi) $\| A - \frac{A+(A)^T}{2} \| = \| \frac{A-(A)^T}{2} \| = \sqrt{<\frac{A-(A)^T}{2},\frac{A-(A)^T}{2}>}$\\
+					$= \sqrt{tr[\frac{A-(A)^T}{2}\frac{A-(A)^T}{2}]}= \sqrt{tr[\frac{1}{4}(A^TA-AA-A^TA^T+AA^T)]} = \sqrt{\frac{tr(A^TA)-tr(A^2)}{2}}$
+
+
+
+
+	\item (25, 3.50) \\ I used the familiar notations for me first.\\
+$rx_2 + sy_2 = 1 $
+\\
+\\
+$y^2 = Y \ and \ x^2 = X $
+\\
+\\
+$sY + rX = 1$
+\\
+\\
+$sY = -rX + 1 $
+\\
+\\
+$Y = -\frac{r}{s}X + \frac{1}{s}$
+\\
+\\
+$=\beta_1 X + \beta_0$
+\\
+\\
+\[
+\begin{bmatrix}
+    \hat{\beta_0}       \\
+    \hat{\beta_1}       \\
+\end{bmatrix}
+= 
+\begin{bmatrix}
+    \hat{\frac{1}{s}}    \\
+    -\hat{\frac{r}{s}}     \\
+\end{bmatrix}
+=(\hat{X}^T\hat{X})^{-1}(\hat{X})^Ty
+\]
+\\
+\\
+where $\hat{x} = (1, X) = (1, x^2)$
+\\
+\\
+Thus, $\hat{s} = \frac{1}{\beta_0}, \ \hat{r} = -\hat{s} \hat{\beta_1} = - \frac{\hat{\beta_1}}{\hat{\beta_0}} \\ $ \\
+$\therefore  A, \bold{x}, \bold{b}$ are as in the following. $(X = A, y = \bold{b})$ here. \\
+$A = \begin{bmatrix}
+    1  & x_{1}^{2}  \\
+    \vdots & \vdots    \\
+    1 & x_{n}^{2}
+\end{bmatrix}$,  $ 
+\bold{x}=\begin{bmatrix}
+    \frac{1}{s}    \\
+    -\frac{r}{s}     \\
+\end{bmatrix}$,  $
+\bold{b} = \begin{bmatrix}
+    y_{1}^{2}    \\
+    \vdots    \\
+    y_{n}^2
+\end{bmatrix}$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}
+
+\vspace{25mm}
+
+\bibliography{ProbStat_probset}
+
+\end{document}

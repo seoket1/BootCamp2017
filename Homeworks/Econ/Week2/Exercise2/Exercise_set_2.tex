@@ -1,0 +1,93 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{geometry}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in}
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{\footnotesize\textsl{OSM Lab, Summer 2017, Econ PS \#2}}
+\cfoot{}
+\rfoot{\footnotesize\textsl{Page \thepage\ of \pageref{LastPage}}}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\usepackage[format=hang,font=normalsize,labelfont=bf]{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{float,color}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor=red,urlcolor=blue,citecolor=red}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{derivation}{Derivation} % Number derivations on their own
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition} % Number propositions on their own
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+%\numberwithin{equation}{section}
+\bibliographystyle{aer}
+\newcommand\ve{\varepsilon}
+\newcommand\boldline{\arrayrulewidth{1pt}\hline}
+
+\usepackage{ amssymb }
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+
+
+
+
+\begin{document}
+
+\begin{flushleft}
+   \textbf{\large{Excercise Set2 for Economics}} \\[5pt]
+   OSM Lab, Eun-Seok Lee \\[5pt]
+ 
+\end{flushleft}
+
+\vspace{5mm}
+
+\begin{enumerate}
+
+       
+
+	\item Claim: by Banah's fixed point theorem, it has an unique solution.\\
+		 Metric Space is complete, so all I have to do is to prove U is a contraction mapping.\\ \\
+		$\rho(Uv,Uw) = |\beta \int v(f(y-\rho(y))z)\phi(dz) - \beta \int w(f(y-\rho(y))z)\phi(dz)| $ \\
+	\phantom{------------ }			  $\leq |\beta \int (v-w)[f(y-\rho(y))z]\phi(dz)| $ \\
+	\phantom{------------ }			  $\leq \beta \int |(v-w)[f(y-\rho(y))z]|\phi(dz) $  \\
+	\phantom{------------ }			  $\leq \beta sup|v(w)-w(y)|$ \\
+                                  
+		If this problem satisfies fixed point property, I can use successive approximation for optimal policy by hand. Also I can calculate true optimal policy and used the approximation method to get an optimal policy. It has to be same.
+
+   		
+   	\item (Please see py file) Those two suggested policy functions give us lower utility than the utility from true optimal policy function after interpretation. Therefore NEITHER of these policies is an optimal policy.
+\end{enumerate}
+
+\vspace{25mm}
+
+
+
+\end{document}
