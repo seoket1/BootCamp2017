@@ -93,88 +93,8 @@ Let diagonal entries of an upper-triangular matrix $A$ be $d_1, d_2, d_3, \cdots
 
 
 	\item (4.8) \\
-(i)
-I think that it has to be $C^{\infty}([-\pi,\pi],R)$ such as Exercise 3.8. I think it might be typo. If it is $C^{\infty}([-\pi,\pi],R)$, then I can prove as the following. \\ \\
+(i) In terms of linear combination, it is linear independent. For example, when we calculate determinent of wronskian, it is not zero. \\ \\
 
-
-
-(1)
-$\frac{1}{\pi}\int_{-\pi}^{\pi} cost \cdot sint \ dt $ = $\frac{1}{\pi}\int_{-\pi}^{\pi} \frac{1}{2} sin2t \ dt $ 
-\\
-\\
-$=\frac{1}{2\pi}[-\frac{1}{2} cos2t]_{-\pi}^{pi}$
-\\
-$=0$
-\\
-\\
-(2)
-$\frac{1}{\pi}\int_{-\pi}^{\pi} cost \cdot cos2t \ dt $ = $\frac{1}{\pi}\int_{-\pi}^{\pi} cost (2cos^2t-1) \ dt $
-\\
-\\
-$=\frac{1}{\pi}\int_{-\pi}^{\pi} (2cos^3t-cost) \ dt $
-\\
-\\
-$=\frac{1}{\pi}\int_{-\pi}^{\pi} \frac{1}{2}(cos3t+cost) \ dt $
-\\
-\\
-$=\frac{1}{\pi}[\frac{1}{6}(sin3t)+\frac{1}{2}sint]_{-\pi}^{\pi} $
-\\
-\\
-$=0$
-\\
-\\
-(3)
-$\frac{1}{\pi}\int_{-\pi}^{\pi} cost \cdot sin2t \ dt $ 
-$=\frac{1}{\pi}\int_{-\pi}^{\pi} 2cos^2t \cdot sint \ dt $ 
-\\
-\\
-$=\frac{1}{\pi}\int_{-\pi}^{\pi} 2(sint - sin^3t) \ dt $ 
-\\
-\\
-$=\frac{1}{\pi}[\frac{1}{2}(-cost)+\frac{1}{6}(-cos3t)]_{-\pi}^{\pi} $ 
-$=0$
-\\
-\\
-(4)
-$\int_{-\pi}^{\pi} sint \cdot cos2t \ dt $ 
-$=\int_{-\pi}^{\pi} sint(1-2sin^2t) \ dt $ 
-\\
-\\
-$=\int_{-\pi}^{\pi} -\frac{1}{2}sint + \frac{3}{2}sin3t \ dt $ 
-\\
-\\
-$=[\frac{1}{2}cost - \frac{1}{2}cost3t]_{-\pi}^{\pi} $
-\\
-\\
-$=0$
-\\
-\\
-(5)
-$\int_{-\pi}^{\pi} sint \cdot sin2t \ dt $ 
-$=\int_{-\pi}^{\pi} 2sin^2t cost \ dt $ 
-$=\int_{-\pi}^{\pi} 2(1-cos^2t)cost \ dt $ 
-\\
-\\
-$=\int_{-\pi}^{\pi} 2cost - 2 \cdot \frac{1}{4}(3cost + cos3t) \ dt $ 
-$=\int_{-\pi}^{\pi} \frac{1}{2}cost - \frac{1}{2}cos3t \ dt $ 
-\\
-\\
-$=[\frac{1}{2}sint-\frac{1}{6}sin3t]_{-\pi}^{\pi}$
-\\
-\\
-$=0$
-\\
-\\
-(6)
-$\int_{-\pi}^{\pi} cos2t \cdot sin2t \ dt $
-\\
-\\
-$\int_{-2\pi}^{2\pi} cost \cdot sint (\frac{1}{2}) \ dt $
-$=0$
-\\
-\\
-Thus, S is orthogonal set. By definition, it is linear independent.
-\\
 
 (ii)
 $D=\begin{bmatrix} 0&1&0&0 \\ -1&0&0&0 \\ 0&0&0&2 \\ 0&0&-2&0 \end{bmatrix}\begin{bmatrix} sinx \\ cosx \\sin2x \\cos2x\end{bmatrix}$
@@ -265,8 +185,8 @@ $
  	\item (4.31) \\
 (i) $\|A\|_2 = sup\frac{\| Ax\|_2}{\| x\|_2} =sup\frac{\| U\Sigma V^Hx\|_2}{\| x\|_2} =sup\frac{\| \Sigma V^Hx\|_2}{\| x\|_2} =sup\frac{\| \Sigma V^Hx\|_2}{\| V^Hx\|_2} = sup\frac{(\sum|\sigma_i V^Hx|^2 )^{0.5}}{(\sum|V^Hx|^2 )^{0.5}} \\$
 (ii) By the method of (i), now $\frac{1}{\sigma_n}=\|A^{-1}\|_2 $ (It is the largest here.)$
-$
-(iii) $\| A^H\|_2^2=\sigma_1^2=\| A^T\|_2 = \sigma_1^2 = \| A^HA\|_2 = \sigma_1^2 = (\| A\|_2)^2\\$
+$ \\
+(iii) $\| A^H\|_2^2=\sigma_1^2=\| A^T\|_2^2 = \sigma_1^2 = \| A^HA\|_2 = \sigma_1^2 = (\| A\|_2)^2\\$
 (iv) $\| UAV\|_2 = \| UU\Sigma V^HV\|_2 = \| \Sigma\|_2 = \| A\|_2$
 
 
