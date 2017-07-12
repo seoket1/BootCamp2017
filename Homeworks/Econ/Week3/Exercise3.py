@@ -122,14 +122,13 @@ alpha_k = 0.29715
 alpha_l = 0.65
 delta = 0.154
 psi = 1.08
-psi_1 = 0.03
 w = 0.7
 r= 0.04
 z = 1
 
 betafirm = (1 / (1 + r))
 
-dens = 1
+dens = 5
 # put in bounds here for the capital stock space
 kstar = ((((1 / betafirm - 1 + delta) * ((w / alpha_l) **
                                          (alpha_l / (1 - alpha_l)))) /
@@ -171,23 +170,15 @@ op = operating_profits(z_grid, kvec, alpha_l, alpha_k)
 e = np.zeros((len(z_grid), sizek, sizek))
 
 @jit
-def Cash_flow_invest(e, op, kvec, delta, psi, sizek, z_grid):
+def Cash_flow(e, op, kvec, delta, psi, sizek, z_grid):
     for i in range(sizek):
         for j in range(sizek):
             for k in range(len(z_grid)):
-                e[k, i, j] = op[k, i] - kvec[j] + ((1 - delta) * kvec[i]) - psi_1 * kvec[i]
+                e[k, i, j] = (op[k, i] - kvec[j] + ((1 - delta) * kvec[i]) - ((psi / 2) * ((kvec[j] - ((1 - delta) * kvec[i])) ** 2)/ kvec[i]))
     return e
 
-@jit
-def Cash_flow_no_invest(e, op, kvec, delta, psi, sizek, z_grid):
-    for i in range(sizek):
-        for j in range(sizek):
-            for k in range(len(z_grid)):
-                e[k, i, j] = op[k, i]
-    return e
+e = Cash_flow(e, op, kvec, delta, psi, sizek, z_grid)
 
-e_invest = Cash_flow_invest(e, op, kvec, delta, psi, sizek, z_grid)
-e_no_invest = Cash_flow_no_invest(e, op, kvec, delta, psi, sizek, z_grid)
 
 '''*************************'''
 ''' Initial Setting for VFI '''
@@ -206,9 +197,8 @@ def vmat(sizek, z_grid, e, betafirm, V, Vmat):
     for i in range(sizek):  # loop over k
         for j in range(sizek):  # loop over k'
             for k in range(len(z_grid)):  # loop over z
-                Vmat[k, i, j] = max(e_invest[k, i, j] + betafirm * V[k, j], e_no_invest[k, i, j] + betafirm * V[k, j])
+                Vmat[k, i, j] = e[k, i, j] + betafirm * V[k, j]
     return Vmat
-
                 
 while VFdist > VFtol and VFiter < VFmaxiter:
     TV = np.copy(V)
@@ -252,7 +242,7 @@ plt.ylabel('Value Function')
 plt.title('Value Function - sthocastic firm w/ adjustment costs')   
 plt.legend(loc=9, bbox_to_anchor=(1.2, 1))         
 plt.show()       
-
+            
 # Plot optimal capital stock rule as a function of firm size
 fig, ax = plt.subplots()
 for i in range(len(z_grid)):
@@ -275,6 +265,8 @@ plt.title('Policy Function, Next Period Capoital - stochastic firm w/ ' +
 plt.legend(loc=9, bbox_to_anchor=(1, 0.5))
 plt.show()
             
+
+
 
 # Plot investment rule as a function of firm size
 fig, ax = plt.subplots()
@@ -300,5 +292,87 @@ plt.show()
 
 
 
-print("I think that the firms invest specific amount of k in early period in a reason that adjustment cost will increase as k increases.")
+'''*************************'''
+''' Initial Setting for PFI '''
+'''*************************'''    
+c1 = np.zeros((len(z_grid), len(kvec), len(kvec)))
+@jit
+def c1_iter(psi, kvec, delta, z_grid):
+    for k in range(len(z_grid)):
+        for i in range(len(kvec)):
+            for j in range(len(kvec)):
+                c1[k, i, j] = psi * ( (kvec[j] - (1-delta)*kvec[i])/kvec[i] )
+    return c1
+c1 = c1_iter(psi, kvec, delta, z_grid)
+
+c2 = np.zeros((len(z_grid), len(kvec), len(kvec)))
+@jit
+def c2_iter(psi, kvec, delta, z_grid):
+    for k in range(len(z_grid)):
+        for i in range(len(kvec)):
+            for j in range(len(kvec)):
+                c2[k, i, j] = psi * ( (kvec[j] - (1-delta)*kvec[i])/kvec[i] ) * (-kvec[j]/kvec[i]) + (psi/2) * ( (kvec[j] - (1-delta)*kvec[i])/kvec[i] ) ** 2  
+    return c2
+c2 = c2_iter(psi, kvec, delta, z_grid)
+
+pi2 = np.zeros((len(z_grid), len(kvec)))
+@jit
+def pi2_iter(alpha_k, w, alpha_l, z_grid, kvec):
+    for k in range(len(z_grid)):
+        pi2[k] = alpha_k * (alpha_l/w)**(alpha_l/(1-alpha_l)) * np.exp(z_grid[k])**(1/(1-alpha_l)) * kvec**((alpha_k+alpha_l-1)/(1-alpha_l))
+    return pi2
+pi2 = pi2_iter(alpha_k, w, alpha_l, z_grid, kvec)
+
+k_p = np.zeros((len(z_grid), sizek, sizek))
+@jit
+def K_Policy(e_p, op, kvec, delta, psi, sizek, z_grid):
+    for i in range(sizek):
+        for j in range(sizek):
+            for k in range(len(z_grid)):    
+                k_p[k, i, j] = betafirm * ( pi2[k,j] + (1-delta) - c2[k, i, j]) - c1[k, i, j] - 1
+    return k_p
+
+k_p = K_Policy(k_p, op, kvec, delta, psi, sizek, z_grid)
+
+
+PFtol = 1e-6
+PFdist = 7.0
+PFmaxiter = 3000
+P = np.zeros((len(z_grid), sizek))  # initial guess at value function
+Pmat = np.zeros((len(z_grid), sizek, sizek))  # initialize Vmat matrix
+
+PFiter = 1
+start_time = time.clock()
+
+@jit
+def pmat(sizek, z_grid, k_p, betafirm, P, Pmat):
+    for i in range(sizek):  # loop over k
+        for j in range(sizek):  # loop over k'
+            for k in range(len(z_grid)):  # loop over z
+                Pmat[k, i, j] = k_p[k, i, j]
+    return Pmat
+
+from scipy.optimize import brentq
+          
+while PFdist > PFtol and PFiter < PFmaxiter:
+    TP = np.copy(P)
+    P = np.copy(pi @ P)
+    Pmat = pmat(sizek, z_grid, k_p, betafirm, P, Pmat)
+    # iteration for graphing later
+    P = Pmat.max(axis=2)  # apply max operator to Vmat (to get V(k))
+    PFdist = (np.absolute(P - TP)).max()  # check distance between value
+    # function for this iteration and value function from past iteration
+    PFiter += 1
+    
+PFI_time = time.clock() - start_time
+if PFiter < PFmaxiter:
+    print('Policy function converged after this many iterations:', VFiter)
+else:
+    print('Policy function did not converge')
+print('PFI took ', PFI_time, ' seconds to solve')
+
+PF = P  # solution to the functional equation
+
+
+
 
