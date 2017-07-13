@@ -83,7 +83,7 @@ import pandas as pd
 class LinkPredictor():
     def __init__(self, csvfile):
         # data arrange. convert to np_data #csvfile, header = -1) # 
-        data = pd.read_csv("C:/Users/suket/Desktop/Homeworks/Computation/Week3/Problem4/social_network.csv", header = -1)
+        data = pd.read_csv(csvfile, header = -1)
         npdata = data.values
         transition = np.hstack((npdata[:,0], npdata[:,1]))
         
