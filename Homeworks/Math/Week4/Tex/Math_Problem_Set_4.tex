@@ -1,0 +1,123 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{geometry}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in}
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{\footnotesize\textsl{OSM Lab, Summer 2017, Math PS \#4}}
+\cfoot{}
+\rfoot{\footnotesize\textsl{Page \thepage\ of \pageref{LastPage}}}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\usepackage[format=hang,font=normalsize,labelfont=bf]{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{float,color}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor=red,urlcolor=blue,citecolor=red}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{derivation}{Derivation} % Number derivations on their own
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition} % Number propositions on their own
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+%\numberwithin{equation}{section}
+\bibliographystyle{aer}
+\newcommand\ve{\varepsilon}
+\newcommand\boldline{\arrayrulewidth{1pt}\hline}
+
+\begin{document}
+
+\begin{flushleft}
+   \textbf{\large{Math Homework Week \#4, Spectral Theory}} \\[5pt]
+   OSM Lab, Eun-Seok Lee \\[5pt]
+
+\end{flushleft}
+
+\vspace{5mm}
+
+\begin{enumerate}
+
+
+
+	\item (6.1) \\
+$min -e^{-w^Tx} \\
+\phantom{----}s.t$ $-w^Tx \leq - w^TAw + w^TAy - a\\
+\phantom{-----}y^Tw = w^Tx +b$
+
+
+	\item (6.5) \\
+$min -(0.07m + 0.05k) \\
+\phantom{----}s.t$ $4m + 3k = 240,000\\
+\phantom{------}2m + k = 6,000$
+
+	\item (6.6) \\
+$f_1(x,y) = 6xy + 4y^2 + y = 0\\
+f_2(x, y) = 3x^2 + 8xy + x = 0\\  \\
+Hessian =  \begin{bmatrix} 6y& 6x+8y+1 \\ 6x+8y+1& 8x \end{bmatrix}\\$
+i) (0,0) --> saddle point because Hessian is indefinite.\\
+ii) (0, -1/4) --> saddle point because Hessian is indefinite.\\
+iii) (1/3, 0) --> saddle point because Hessian is indefinite.\\
+iv) (-1/9, -1/12) --> local maximum because Hessian is negative definite.\\
+
+
+	\item (6.11) \\
+$ x_1 = x_0 - \frac{f'(x_0)}{f''(x_0)}\\
+f'(x) = 0\\
+x = -\frac{b}{2a} $ is an unique maxizer. \\
+$f''(x) = 2a > 0$ so, this is maximizer. \\
+\\
+Now, $x_1 = x_0 - (2ax_0 +b)\frac{1}{2a} = -\frac{b}{2a}$ \\
+So, for any $x_0$, $x_1$ is an unique maxizer.
+ 
+
+
+	\item (6.14) \\
+I uploaded .py file on math/Week4.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}
+
+\vspace{25mm}
+
+\bibliography{ProbStat_probset}
+
+\end{document}
