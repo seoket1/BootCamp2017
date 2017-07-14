@@ -12,6 +12,7 @@ def f_2_prime(x):
 
 N = 10000
 x0 = 1
+tol=1e-10
 
 for i in range(N):
     x1 = x0 - (f_prime(x0)/f_2_prime(x0))
