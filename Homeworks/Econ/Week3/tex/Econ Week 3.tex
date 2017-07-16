@@ -1,0 +1,103 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{geometry}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in}
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{\footnotesize\textsl{OSM Lab, Summer 2017, Econ PS \#3}}
+\cfoot{}
+\rfoot{\footnotesize\textsl{Page \thepage\ of \pageref{LastPage}}}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\usepackage[format=hang,font=normalsize,labelfont=bf]{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{float,color}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor=red,urlcolor=blue,citecolor=red}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{derivation}{Derivation} % Number derivations on their own
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition} % Number propositions on their own
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+%\numberwithin{equation}{section}
+\bibliographystyle{aer}
+\newcommand\ve{\varepsilon}
+\newcommand\boldline{\arrayrulewidth{1pt}\hline}
+
+\begin{document}
+
+\begin{flushleft}
+   \textbf{\large{Econ Homework Week \#3, Firm Dynamics}} \\[5pt]
+   OSM Lab, Eun-Seok Lee \\[5pt]
+
+\end{flushleft}
+
+\vspace{5mm}
+
+\begin{enumerate}
+
+
+
+	\item I modified given codes little bit, and applied "z\_grid" and "pi" to Value function. It looks reasonable. With higher z\_grid, it has higher value function.
+
+
+	\item I think that the firms invest specific amount of k in early period in a reason that adjustment cost will increase as k increases fast rather than the previous cost function. Therefore, investment rate will decrease more faster. I set the dense as 1 to control "no investment policy."
+
+
+	\item If I make policty function codes more efficient, it might be time-saving. But here, PFI takes longer time than VFI. (Actually, it is very slow...) The reason why I think PFI might be faster is that iteration time of PFI is shorter than VFI's when I execute the codes. When I see the result, the functions made from both of them look very similar. Because of processing time, I set weak tolerance and dense (1e-2 and 2). If I set those stonger, I expect that its shape will look more similar. I could have calculated the function for $k_{t+1}$ with repect to other variables. But, I would like to depend on computer rather than hand calculating.
+
+
+	\item The result for the variables of interest is as follows.\\ \\
+-- converged wage is 1.04695061\\
+-- wage = 1.04695061\\
+-- real interest rate = 0.04166666 (This is fixed by $(\frac{1}{\beta}-1)$)\\
+-- Labor demand = 0.482755926825 \\
+-- Labor supply = 0.485215909551 \\ \\
+Around size "1" of capital, density was higher. In this problem, I attached the picture of distribution in the next page.
+
+
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}
+
+\vspace{25mm}
+
+\bibliography{ProbStat_probset}
+
+\end{document}
