@@ -199,6 +199,7 @@ def vmat(sizek, z_grid, e, betafirm, V, Vmat):
             for k in range(len(z_grid)):  # loop over z
                 Vmat[k, i, j] = e[k, i, j] + betafirm * V[k, j]
     return Vmat
+
                 
 while VFdist > VFtol and VFiter < VFmaxiter:
     TV = np.copy(V)
@@ -236,7 +237,7 @@ optI = optK - (1 - delta) * kvec
             
 # Plot the solution
 for i in range(len(z_grid)):
-    plt.plot(kvec, VF[i, :], label='Investment rate from z: %f' %(np.exp(z_grid[i])))
+    plt.plot(kvec, VF[i, :], label='Value function from z: %f' %(np.exp(z_grid[i])))
 plt.xlabel('Size of Capital Stock')
 plt.ylabel('Value Function')
 plt.title('Value Function - sthocastic firm w/ adjustment costs')   

@@ -299,6 +299,10 @@ plt.legend(loc=9, bbox_to_anchor=(0.6, 0.8))
 plt.show()
 
 
+print("\n\n -- Comments --\n")
+print("I think that the firms invest specific amount of k in early period in a reason that adjustment cost will increase as k increases.\n")
+print("Therefore, investment rate will decrease more faster.\n\n")
 
-print("I think that the firms invest specific amount of k in early period in a reason that adjustment cost will increase as k increases.")
+print("I set dense is \'1\' here")
+
 
