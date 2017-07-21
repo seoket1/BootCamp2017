@@ -1,0 +1,163 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{array}
+\usepackage{threeparttable}
+\usepackage{geometry}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1.25in,rmargin=1.25in}
+\usepackage{fancyhdr,lastpage}
+\pagestyle{fancy}
+\lhead{}
+\chead{}
+\rhead{}
+\lfoot{\footnotesize\textsl{OSM Lab, Summer 2017, Math PS \#4}}
+\cfoot{}
+\rfoot{\footnotesize\textsl{Page \thepage\ of \pageref{LastPage}}}
+\renewcommand\headrulewidth{0pt}
+\renewcommand\footrulewidth{0pt}
+\usepackage[format=hang,font=normalsize,labelfont=bf]{caption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{natbib}
+\usepackage{setspace}
+\usepackage{float,color}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor=red,urlcolor=blue,citecolor=red}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{derivation}{Derivation} % Number derivations on their own
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition} % Number propositions on their own
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+%\numberwithin{equation}{section}
+\bibliographystyle{aer}
+\newcommand\ve{\varepsilon}
+\newcommand\boldline{\arrayrulewidth{1pt}\hline}
+
+\begin{document}
+
+\begin{flushleft}
+   \textbf{\large{Math Homework Week \#4, Continuous Optimization}} \\[5pt]
+   OSM Lab, Eun-Seok Lee \\[5pt]
+
+\end{flushleft}
+
+\vspace{5mm}
+
+\begin{enumerate}
+
+
+
+	\item (7.1) \\
+If S is a nonempty set, \\$\lambda_1x_1 + \cdots + \lambda_kx_k \in conv(S), x_i\in S, k\in N\\
+ $where $ \lambda_i \geq 0$, and $\lambda_1 + \cdots + \lambda_k =1 $ \\ \\
+It means that $\lambda x+(1-\lambda)y \in con(S) \ \ \forall \lambda $ s.t.$ 0 \leq \lambda \leq 1 $ \\
+It is the definition of convex set.
+
+
+	\item (7.2) \\
+1) hyperplane is convex. \\
+$P = \{ x\in V | \langle a,x\rangle \}$ where $ a \in V, a \neq 0, $ and $ b \in R \\ $\\
+It means that, in the condition of $a_1x_1 + \cdots + a_nx_n = b $, \\
+those $x_1, \cdots,  x_n$ has to be memebers of $P$.
+\\
+By the definition of convex, $\lambda x + (1-\lambda)y \in P \\
+\because$ it is totally same expression to definition of hyperplane. \\ \\
+
+2) half space is convex. \\
+$H = \{ x \in V | \langle a,x\rangle \leq b \} \\$
+It means that, in the condition of $a_1x_1 + \cdots + a_nx_n \leq b $, \\
+those $x_1, \cdots,  x_n$ has to be memebers of $P$.
+\\
+By the definition of convex, $\lambda x + (1-\lambda)y \in P \\
+\because$ it is totally same expression to definition of hyperplane. \\ \\
+
+	\item (7.4) \\
+(i) $\| x - p + p - y \|^2 = \| x - p\|^2 + \|p-y\|^2 + 2\|x-p\|\|p-y\|cos\theta  \\
+ =  \| x - p \|^2 + \| p-y \|^2 + 2 \langle x-p, p-y\rangle
+$\\
+\\
+(ii) $ \| x-y \|^2 \geq \|x-p\|^2 $ from (i) and assumption (7.14)$ \\
+\therefore \| x-y\| > \|x-p \| \\
+\because y \neq p \\
+\therefore \|p-y\| >0 \\
+$\\
+(iii) $\| x - \lambda y - (1- \lambda)p \|^2 = \| x-p + \lambda (p-y)\|^2 \\
+= \| x-p\|^2 + 2\| x-p\| \| \lambda(p-y)\|cos\theta  + \lambda^2 \| y-p\|^2 \\
+=  \| x-p\|^2 + 2\lambda \langle x-p, p-y\rangle  + \lambda^2 \| y-p\|^2 \\
+$ \\
+(iv) $\frac{\| x-z \|^2 -\| x-p\|^2}{\lambda} = 2 \langle x-p, p-y \rangle + \lambda^2 \|y-p\|^2 $ from (iii)\\
+By the definition of projection, LHS $\geq 0$ \\ Also, when $\lambda = 0$, $0\leq \langle x-p, p-y\rangle$
+
+
+
+
+	\item (7.6) \\
+$f(\lambda x + (1-\lambda) y \leq \lambda f(x) + (1 -\lambda) f(y) = c \\
+$ RHS $= c$, Then, $x \in domain, y\in domain$, so, $(\lambda x + (1-\lambda)y) \in domain$\\
+for satisfying convex function definition.
+
+
+	\item (7.7) \\
+$
+\lambda_1 \theta_1f_1(x) + \lambda_1 (1-\theta_1)f_1(y) + \cdots + \lambda_n \theta_nf_n(x) + \lambda_n (1-\theta_n)f_n(x) \geq \lambda_1 f_1(\theta_1x + (1-\theta_1)y) + \cdots + \lambda_n f_n(\theta_nx + (1-\theta_n)y) \\
+\therefore \lambda f(x) + (1-\lambda) f(y)  \geq f(\lambda x + (1-\lambda)y) \\
+$
+
+	\item (7.13) \\
+If $f$ is not constant, $\exists x$ and $y $ s.t.$  f(x) \neq f(y)$\\ \\
+1) Let x be the point of $max(f(x))$\\
+If  $y_1 < x$ and $f(y_1) \neq f(x)$, $f(\lambda x + (1-\lambda)y_1) \leq \lambda f(x) + (1-\lambda) f(y_1)$ and $f(y_1) \leq f(x) $\\
+If $y_2 > x$ and $ f(y_2) \neq f(x)$, $f(\lambda x + (1-\lambda)y_2) \leq \lambda f(x) + (1-\lambda) f(y_2)$ and $f(y_2) \leq f(x) $\\
+Now, $\exists \lambda $ s.t. $ f(x) =\lambda f(y_1) + (1-\lambda) f(y_2) > \lambda f(y_1) + (1-\lambda) f(y_2), \\(\because f(x) \neq f(y_1), f(y_2))$\\ then, it is contradiction to the convex definition. \\
+
+2) If there is no maximum point of the function, it has to be increasing function as x goes to infinity or it has to be decreasing function as x goes to infinity. if function increases and decreases, it has to be concave by the proof of "1)".  I will prove the case of the increasing function in a reason that the way of proving method is same.\\
+(i) First, we can pick $x<y$ and $f(x) < f(y)$. If $ f(\lambda x + (1-\lambda)y) = \lambda f(x) + (1-\lambda)f(y)$, then, it should not be bounded because it is a line. \\
+(ii) Second, we can pick $x<y$ and $f(x) < f(y)$. If $\lambda f(x) + (1-\lambda)f(y) <\lambda f(x) + (1-\lambda)f(y)$, then, $ f(t) \geq f(x) +(t-a)\frac{f(y) - f(x)}{y-x}$ s.t. $ t>y$ by convexity. Then, as $t$ goes infinity, it diverges and this is contradiction. \\
+\\
+I showed every possible cases. Therefore, Q.E.D..
+
+
+	\item (7.20) \\
+By the assumption, $\lambda f(x) + (1-\lambda) f(y) = f(\lambda x + (1-\lambda)y) \\
+\therefore f(0) + \lambda f(x) = f(\lambda x) $ when $ y=0.$ \\
+This is a general case and exactly affine form.
+
+	\item (7.21) \\
+$[\phi(f(x))]' = \phi ' (f(x))f'(x) = 0$ by the chain rule.\\
+Then, $\phi(x)$ is strictly increasing, so $\phi '(f(x)) \neq 0$. \\
+Therefore, $f'(x)=0$, and this is same FONC with ($min$  $f(x)$).
+
+
+
+
+
+
+
+
+
+
+\end{enumerate}
+
+\vspace{25mm}
+
+\bibliography{ProbStat_probset}
+
+\end{document}
