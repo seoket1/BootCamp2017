@@ -80,10 +80,10 @@ def initial(k_init, n_agents, count):
     
     # Create ev_f, eval_f, eval_grad_f, eval_g, eval_jac_g for given k_init and n_agent 
     def eval_f(X):
-        return EV_F(X, k_init, n_agents)
+        return EV_F(X, k_init, n_agents, count)
     
     def eval_grad_f(X):
-        return EV_GRAD_F(X,k_init, n_agents)
+        return EV_GRAD_F(X,k_init, n_agents, count)
     
     def eval_g(X):
         return EV_G(X, k_init, n_agents, count) #, count)

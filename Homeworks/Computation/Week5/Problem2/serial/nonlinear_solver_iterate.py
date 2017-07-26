@@ -74,10 +74,10 @@ def iterate(k_init, n_agents, grid, count):
     # Create ev_f, eval_f, eval_grad_f, eval_g, eval_jac_g for given k_init and n_agent 
         
     def eval_f(X):
-        return EV_F_ITER(X, k_init, n_agents, grid)
+        return EV_F_ITER(X, k_init, n_agents, grid, count)
         
     def eval_grad_f(x):
-        return EV_GRAD_F_ITER(X, k_init, n_agents, grid)
+        return EV_GRAD_F_ITER(X, k_init, n_agents, grid, count)
       
     def eval_g(x):
         return EV_G_ITER(X, k_init, n_agents, count)  #########################
