@@ -1,0 +1,434 @@
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage{amsmath, amsfonts, amscd, amssymb, amsthm}
+\usepackage{graphicx}
+%\usepackage{import}
+%\usepackage{versions}
+%\usepackage{crop}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{makeidx}
+\usepackage{hyperref}
+\usepackage{ifthen}
+\usepackage[format=hang,font=normalsize,labelfont=bf]{caption}
+\usepackage{natbib}
+\usepackage{setspace}
+%\usepackage{placeins}
+\usepackage{framed}
+%\usepackage{enumitem}
+\usepackage{threeparttable}
+\usepackage{geometry}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage{array}
+\usepackage{delarray}
+\usepackage{lscape}
+\usepackage{float,color, colortbl}
+\usepackage{hyperref}
+%\usepackage{tabu}
+%\usepackage{appendix}
+
+
+
+\include{thmstyle}
+\bibliographystyle{aer}
+\providecommand{\abs}[1]{\lvert#1\rvert}
+\providecommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\ve}{\varepsilon}
+\newcommand{\ip}[2]{\langle #1,#2 \rangle}
+
+\hypersetup{colorlinks,linkcolor=red,urlcolor=blue,citecolor=red}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}{Definition} % Number definitions on their own
+\newtheorem{derivation}{Derivation} % Number derivations on their own
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition} % Number propositions on their own
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+%\numberwithin{equation}{document}
+\graphicspath{{./Figures/}}
+\renewcommand\theenumi{\roman{enumi}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+
+\makeindex
+
+
+\begin{document}
+
+\begin{titlepage}
+	\title{Open Source Macroeconomics Laboratory Boot Camp \\ Homework Assignements}  %change title here accordingly
+	\author{Eun-Seok Lee\\ \emph{A Student Researcher}}
+	\date{\LARGE{2017}}
+	\maketitle
+\end{titlepage}
+
+\begin{spacing}{1.5}
+
+
+\section*{DSGE}\label{DSGE_HW}
+
+	% 1
+	\begin{exercise}
+I guess that $k_{t+1} = \alpha \beta e^{z_t}k_t^{\alpha}$ by Week 3, SMM problem. I will check with FOC condition.\\
+$A = \alpha\beta
+$\\
+$V(k_t, z_t) = max \log(e^{z_t}k_t^{\alpha} - k_{t+1}) + \beta E_t\{ V(K_{t+1}, z_{t+1}) \}
+$\\
+Then, we can check with Euler equation.\\
+$\frac{1}{e^{z_t}k_t^{\alpha} - k_{t+1}} = \beta E_t [ \frac{\alpha e^{z_{t+1}}k_{t+1}^{(alpha -1)}} {e^{z_{t+1}}k_{t+1}^{\alpha} - k_{t+2}}] \\
+\frac{1}{(1-\alpha\beta)e^{z_t}k_t^{\alpha} } = \beta E_t [ \frac{\alpha e^{z_{t+1}}k_{t+1}^{(alpha -1)}} {e^{z_{t+1}}k_{t+1}^{\alpha} - k_{t+2}}]
+ $\\
+$\frac{1}{e^{z_t}k_t^{\alpha} - k_{t+1}} = \beta E_t [ \frac{\alpha e^{z_{t+1}}k_{t+1}^{(alpha -1)}} {e^{z_{t+1}}k_{t+1}^{\alpha} - k_{t+2}}] \\
+\frac{1}{(1-\alpha\beta)e^{z_t}k_t^{\alpha} } = \beta E_t [ \frac{\alpha e^{z_{t+1}}k_{t+1}^{(alpha -1)}} {e^{z_{t+1}}k_{t+1}^{\alpha} - \alpha \beta e^{z_{t+1}}k_{t+1}^{\alpha}}]
+ $\\
+$\frac{1}{e^{z_t}k_t^{\alpha} - k_{t+1}} = \frac{1}{e^{z_t}k_t^{\alpha} - k_{t+1}}
+ $
+
+	\end{exercise}
+
+	% 2
+	\begin{exercise}** Budget Constraint \\
+$c_t = (1-\tau)[w_tl_t + (r_t-\delta)k_t] + k_t + T_t - k_{t+1}$\\
+\\** Intertemporal Euler Equation\\
+$\frac{1}{c_t} = \beta E_t[\frac{(r_{t+1}-\delta)(1-\tau) +1}{c_{t+1}}]$
+\\
+\\** Consumption-leisure Euler Equation\\
+$\frac{1}{1-l_t} = \frac{w_t(1-\tau)}{c_t}$\\
+\\**Firm FOC\\
+$R_t = \alpha e^{z_t}K_t^{\alpha-1}L_t^{1-\alpha}\\
+W_t = (1-\alpha) e^{z_t}K_t^{\alpha}L_t^{-\alpha}$
+\\
+\\** Gov\\
+$\tau[w_tl_t + (r_t-\delta)k_t] = T_t$
+\\
+\\** Adding-up and Market Clearing\\
+$l_t = L_t\\
+k_t = K_t\\
+w_t = W_t\\
+r_t = R_t$
+\\
+\\** Exogeneous Laws of Motion\\
+$z_t = (1-\rho_z)\bar{z} + \rho z_{t-1} +\epsilon_t^z\\
+\epsilon_t^z \sim iid(0, \sigma_z^2) $
+\\ \\
+We could not solve the way in number 1 because of $\delta$
+	\end{exercise}
+
+	% 3
+	\begin{exercise} 
+** Budget Constraint \\
+$c_t = (1-\tau)[w_tl_t + (r_t-\delta)k_t] + k_t + T_t - k_{t+1}$\\
+\\** Intertemporal Euler Equation\\
+$c_t^{-\gamma} = \beta E_t[\frac{(r_{t+1}-\delta)(1-\tau) +1}{c_{t+1}^{\gamma}}]$
+\\
+\\** Consumption-leisure Euler Equation\\
+$\frac{1}{1-l_t} = \frac{w_t(1-\tau)}{c_t^{\gamma}}$\\
+\\**Firm FOC\\
+$R_t = \alpha e^{z_t}K_t^{\alpha-1}L_t^{1-\alpha}\\
+W_t = (1-\alpha) e^{z_t}K_t^{\alpha}L_t^{-\alpha}$
+\\
+\\** Gov\\
+$\tau[w_tl_t + (r_t-\delta)k_t] = T_t$
+\\
+\\** Adding-up and Market Clearing\\
+$l_t = L_t\\
+k_t = K_t\\
+w_t = W_t\\
+r_t = R_t$
+\\
+\\** Exogeneous Laws of Motion\\
+$z_t = (1-\rho_z)\bar{z} + \rho z_{t-1} +\epsilon_t^z\\
+\epsilon_t^z \sim iid(0, \sigma_z^2) $
+	\end{exercise}
+
+	% 4
+	\begin{exercise} \label{DSGE_HW_CharEq_CES}
+** Budget Constraint \\
+$c_t = (1-\tau)[w_tl_t + (r_t-\delta)k_t] + k_t + T_t - k_{t+1}$\\
+\\** Intertemporal Euler Equation\\
+$c_t^{-\gamma} = \beta E_t[\frac{(r_{t+1}-\delta)(1-\tau) +1}{c_{t+1}^{\gamma}}]$
+\\
+\\** Consumption-leisure Euler Equation\\
+$\frac{1}{1-l_t} = \frac{w_t(1-\tau)}{c_t^{\gamma}}$\\
+\\**Firm FOC\\
+$R_t =e^{z_t}[\alpha K_t^{\eta} + (1-\alpha)L_t^{\eta}]^{\frac{1}{\eta} - 1} \alpha K_t^{\eta -1}\\
+W_t = e^{z_t}[\alpha K_t^{\eta} + (1-\alpha)L_t^{\eta}]^{\frac{1}{\eta} - 1}(1- \alpha) L_t^{\eta -1}$
+\\
+\\** Gov\\
+$\tau[w_tl_t + (r_t-\delta)k_t] = T_t$
+\\
+\\** Adding-up and Market Clearing\\
+$l_t = L_t\\
+k_t = K_t\\
+w_t = W_t\\
+r_t = R_t$
+\\
+\\** Exogeneous Laws of Motion\\
+$z_t = (1-\rho_z)\bar{z} + \rho z_{t-1} +\epsilon_t^z\\
+\epsilon_t^z \sim iid(0, \sigma_z^2) $
+	\end{exercise}
+
+	% 5
+	\begin{exercise} \label{DSGE_HW_NoLeisure}
+** Budget Constraint \\
+$c_t = (1-\tau)[w_tl_t + (r_t-\delta)k_t] + k_t + T_t - k_{t+1}$\\
+\\** Intertemporal Euler Equation\\
+$c_t^{-\gamma} = \beta E_t[\frac{(r_{t+1}-\delta)(1-\tau) +1}{c_{t+1}^{\gamma}}]$
+\\
+\\** Consumption-leisure Euler Equation\\
+It is fixed.\\
+\\**Firm FOC\\
+$R_t = \alpha K_t^{\alpha-1}(L_te^{z_t})^{1-\alpha}\\
+W_t = (1-\alpha)K_t^{\alpha}L_t^{-\alpha} (e^{z_t})^{ (1-\alpha)}$
+\\
+\\** Gov\\
+$\tau[w_tl_t + (r_t-\delta)k_t] = T_t$
+\\
+\\** Adding-up and Market Clearing\\
+$l_t = L_t\\
+k_t = K_t\\
+w_t = W_t\\
+r_t = R_t$
+\\
+\\** Exogeneous Laws of Motion\\
+$z_t = (1-\rho_z)\bar{z} + \rho z_{t-1} +\epsilon_t^z\\
+\epsilon_t^z \sim iid(0, \sigma_z^2) $
+\\
+\\
+** S-S version\\
+$\bar{c} = (1-\tau)[\bar{w}\bar{l} + (\bar{r}-\delta)\bar{k}] + \bar{T}\\
+1 = \beta [(\bar{r}-\delta)(1-\tau) +1]\\
+\bar{r} = \alpha \bar{k}^{\alpha-1}(e^{\bar{z}})^{1-\alpha} \\
+\bar{w} = (1-\alpha)\bar{k}^{\alpha}(e^{\bar{z}})^{ (1-\alpha)}$\\
+$\tau[\bar{w} + (\bar{r}-\delta)\bar{k}] = \bar{T}
+\\
+\\
+\bar{k} = [\bar{r}\frac{1}{\alpha e^{\bar{z}(1-\alpha)}}]^{\frac{1}{\alpha -1}}\\
+\bar{r} = (\frac{1}{\beta} - 1)(\frac{1}{1-\tau}) + \delta
+$
+	\end{exercise}
+
+	% 6
+	\begin{exercise} \label{DSGE_HW_CES}
+** Budget Constraint \\
+$c_t = (1-\tau)[w_tl_t + (r_t-\delta)k_t] + k_t + T_t - k_{t+1}$\\
+\\** Intertemporal Euler Equation\\
+$c_t^{-\gamma} = \beta E_t[\frac{(r_{t+1}-\delta)(1-\tau) +1}{c_{t+1}^{\gamma}}]$
+\\
+\\** Consumption-leisure Euler Equation\\
+$a(1-l_t)^{-\xi} = c_t^{-\gamma}w_t(1-\tau)
+$ \\
+\\**Firm FOC\\
+$R_t = \alpha K_t^{\alpha-1}(L_te^{z_t})^{1-\alpha}\\
+W_t = (1-\alpha)K_t^{\alpha}L_t^{-\alpha} (e^{z_t})^{ (1-\alpha)}$
+\\
+\\** Gov\\
+$\tau[w_tl_t + (r_t-\delta)k_t] = T_t$
+\\
+\\** Adding-up and Market Clearing\\
+$l_t = L_t\\
+k_t = K_t\\
+w_t = W_t\\
+r_t = R_t$
+\\
+\\** Exogeneous Laws of Motion\\
+$z_t = (1-\rho_z)\bar{z} + \rho z_{t-1} +\epsilon_t^z\\
+\epsilon_t^z \sim iid(0, \sigma_z^2) $
+\\
+\\
+** S-S version\\
+$\bar{c} = (1-\tau)[\bar{w}\bar{l} + (\bar{r}-\delta)\bar{k}] + \bar{T}\\
+1 = \beta [(\bar{r}-\delta)(1-\tau) +1]\\
+a(1-\bar{l})^{-\xi} = \bar{c}^{-\gamma}\bar{w}(1-\tau)\\
+\bar{r} = \alpha \bar{k}^{\alpha-1}(\bar{l}e^{\bar{z}})^{1-\alpha} \\
+\bar{w} = (1-\alpha)\bar{k}^{\alpha}\bar{l}^{-\alpha}(e^{\bar{z}})^{ (1-\alpha)}$\\
+$\tau[\bar{w} + (\bar{r}-\delta)\bar{k}] = \bar{T}
+\\
+\\
+\bar{k} = [\bar{r}\frac{1}{\alpha e^{\bar{z}(1-\alpha)}}]^{\frac{1}{\alpha -1}}\\
+\bar{r} = (\frac{1}{\beta} - 1)(\frac{1}{1-\tau}) + \delta
+$
+	\end{exercise}
+
+	% 7
+	\begin{exercise} \label{DSGE_HW_Base_TotalDiff}
+No Homework
+	\end{exercise}
+
+	%8
+	\begin{exercise} \label{DSGE_HW_BM_Grid}
+Please see my py file.
+	\end{exercise}
+
+	%%9
+	%\begin{exercise} \label{DSGE_HW_BM_Grid_Log}
+	%\end{exercise}
+
+	% %10
+	% \begin{exercise} \label{DSGE_HW_Base_Grid_Log}
+	% 	Repeat the exercise \ref{DSGE_HW_BM_Grid} for the baseline tax model in section \ref{DSGE_SS_Base} using the same parameter values as in Exercise \ref{DSGE_HW_CES}.
+	% \end{exercise}
+
+	% %11
+	% \begin{exercise} \label{Linear_HW_Base_Sims}
+	% 	For the same model as above, generate 10,000 artificial time series for an economy where each time series is 250 periods long.  Start each simulation off with a starting value for $k$ equal to the steady state value, and a value of $z=0$.
+
+	% 	Use $\sigma_z^2 = .0004$.
+
+	% 	For each simulation save the time-series for GDP, consumption, investment, and the labor input.  When all 10,000 simulations have finished generate a graph for each of these time-series showing the average value over the simulations for each period, and also showing the five and ninety-five percent confidence bands for each series each period.
+	% \end{exercise}
+
+	% % 12
+	% \begin{exercise} \label{Linear_HW_Base_Moments}
+	% 	For the same model as above, calculate: the mean, volatility (standard deviation), coefficient of variation (mean divided by standard deviation), relative volatility (standard deviation divided bu the standard deviation of output), persistence (autocorrelation), and cyclicality (correlation with output); for each series over each simulation and report the average values and standard errors for these moments over the 10,000 simulations.
+	% \end{exercise}
+
+	% % 13
+	% \begin{exercise} \label{Linear_HW_Base_IRFs}
+	% 	For the same model as above, generate impulse response functions for: GDP, consumption, investment and total labor input; with lags from zero to forty periods.
+	% \end{exercise}
+	
+
+\section*{Linearization}\label{Linear_HW}
+
+	% 1
+	\begin{exercise} \label{Linear_HW_BM_Coeffs}
+Please see my py file.
+	\end{exercise}
+
+	% 2
+	\begin{exercise} \label{Linear_HW_BM_Coeffs_Log}
+Please see my py file.
+	\end{exercise}
+
+	% 3
+	\begin{exercise} \label{Linear_HW_Algebra}
+$F(P\tilde{X_t} + Q\tilde{Z_{t+1}}) + G(P\tilde{X_{t-1}} + Q\tilde{Z_t}) + H\tilde{X_{t-1}}+L(N\tilde{Z_t} + \epsilon_{t+1}) + M \tilde{Z_t} \\
+= FP(P\tilde{X_{t-1}} + Q\tilde{Z_{t}}) +FQ(N\tilde{Z_t} + \epsilon_{t+1} + G(P\tilde{X_{t-1}} + Q\tilde{Z_t}) + H\tilde{X_{t-1}}+L(N\tilde{Z_t} + \epsilon_{t+1}) + M \tilde{Z_t} \\
+= [(FP+G)P+H]\tilde{X_{t-1}} + [FQN + LN + FPQ + GQ + M]\tilde{Z_t} + (FQ+L)\epsilon_{t+1}\\
+\\$
+After Expectation, it goes to (8)
+	\end{exercise}
+
+	% 4
+	\begin{exercise} \label{Linear_HW_Base_Numer_SS}
+Please see my py file.
+	\end{exercise}
+
+	% 5
+	\begin{exercise} \label{Linear_HW_Base_Numer_Deriv}
+Please see my py file.
+	\end{exercise}
+
+	% 6
+	\begin{exercise} \label{Linear_HW_Base_Coeffs}Please see my py file.
+	\end{exercise}
+
+	% 7
+	\begin{exercise} \label{Linear_HW_Base_Sims}
+Please see my py file.
+	\end{exercise}
+
+	% 8
+	\begin{exercise} \label{Linear_HW_Base_Moments}
+Please see my py file.
+	\end{exercise}
+
+	% 9
+	\begin{exercise} \label{Linear_HW_Base_IRFs}
+Please see my py file.
+	\end{exercise}
+
+	% 10
+	\begin{exercise} \label{Linear_HW_OLG}
+Please see my py file.
+	\end{exercise}
+
+	% 11
+	\begin{exercise} \label{Linear_HW_OLG_Stoch}
+Please see my py file.
+	\end{exercise}
+
+
+\section*{Perturbation}\label{Perturb_HW} 
+
+	% 1
+	\begin{exercise} \label{Perturb_HW_Cubic}
+$F_{xxx}[x_u^3] + F_{xxu}[3x_u^2]+F_{xuu}[3x_u] + F_{xx}[3x_ux_{uu}] + F_{xu}[3x_{uu}] + F_{uuu} + F_xx_{uuu} = 0\\
+\therefore x_{uuu} = - \frac{F_{xxx}[x_u^3] + F_{xxu}[3x_u^2]+F_{xuu}[3x_u] + F_{xx}[3x_ux_{uu}] + F_{xu}[3x_{uu}] + F_{uuu}}{F_x}
+$
+	\end{exercise}
+
+	% 2
+	\begin{exercise} \label{Perturb_HW02_GEApprox}
+Please see my py file.
+	\end{exercise}
+
+	% 3
+	\begin{exercise} \label{Perturb_HW_Bivar_Grid}
+Please see my py file.
+	\end{exercise}
+
+	% 4
+	\begin{exercise} \label{Perturb_HW_BM_NoStoch}
+Please see my py file.
+	\end{exercise}
+
+	% 5
+	\begin{exercise} \label{Perturb_HW_BM}
+Please see my py file.
+	\end{exercise}
+
+	%% 6
+	%\begin{exercise} \label{Perturb_HW_BAse}
+	%	Repeat Exercise \ref{Perturb_HW_BM} above using the baseline model from section 6 in the linearization chapter.  Generate figures similar to those you generated in the Linearization chapter in Exercise 7.  Compare this plot with the one from that exercise.
+	%\end{exercise}
+
+
+\section*{Filtering}\label{Filter_HW} 
+
+    % 3
+    \begin{exercise} \label{Filter_HW_Periodograms} 
+Please see my py file.
+    \end{exercise}
+    
+    % 4
+    \begin{exercise} \label{Filter_HW_Periodograms_Filtered} 
+Please see my py file.
+    \end{exercise}
+    
+    % 5
+    \begin{exercise} \label{Filter_HW_Moments_HP} 
+Please see my py file.
+    \end{exercise}
+    
+    % 6
+    \begin{exercise} \label{Filter_HW_Moments} 
+Please see my py file.
+    \end{exercise}
+
+\end{spacing}
+
+\newpage
+
+\bibliography{BootCampText}
+
+\end{document}
