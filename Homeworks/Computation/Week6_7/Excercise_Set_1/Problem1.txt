@@ -1,0 +1,1 @@
+If I have 0.4% serial code, maximum speed-up could not achieve more than 0.4X speed-up no matter how many CPU we have.
